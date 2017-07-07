@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<alvisnlp-plan id="test-as-d">
+
+<!-- Read abstracts -->
+<module id="read-wos-abstracts" class="WebOfKnowledgeReader">
+    <source>&inputfile;</source>
+</module>
+<module id="renametitle" class="Action">
+  <target>documents.sections:TI</target>
+  <action>set:feat:sectionname("title")</action>
+  <setFeatures/>
+</module>
+<module id="renameabstract" class="Action">
+  <target>documents.sections:AB</target>
+  <action>set:feat:sectionname("abstract")</action>
+  <setFeatures/>
+</module>
+
+<!-- Extract relevant entities -->
+<import file="plans/extract_Wheat_entities.plan"/>
+
+<!-- Print results -->
+<write class="XMLWriter2">
+  <outDir>&outdir;</outDir>
+  <roots>$</roots>
+  <fileName>"tagged_abstracts.csv"</fileName>
+  <xslTransform>plans/urgiExport.xslt</xslTransform>
+</write>
+
+</alvisnlp-plan>
