@@ -46,6 +46,7 @@
   <roots>$</roots>
   <fileName>"tagged_abstracts.csv"</fileName>
   <xslTransform>plans/urgiExport.xslt</xslTransform>
+  <indent>false</indent>
 </write>
 
 </alvisnlp-plan>
