@@ -9,12 +9,16 @@
   <xsl:output method="xml" omit-xml-declaration="yes" indent="no"/>
 
 
+
 <xsl:template match="child::node()|@*|node()">
     <xsl:copy>
         <xsl:apply-templates select="child::node()|@*|node()"/>
     </xsl:copy>
 </xsl:template>
 
+<!-- <xsl:template match="text()"> -->
+    <!-- <xsl:value-of select="normalize-space(.)"/> -->
+<!-- </xsl:template> -->
 <xsl:template match="text()">
   <xsl:value-of select=
   "concat(substring(' ', 1 + not(substring(.,1,1)=' ')),
@@ -27,6 +31,7 @@
 <xsl:template match="b:element">
   <xsl:choose>
     <xsl:when test="@type='ne'">
+      <!-- <xsl:element name="{@ne-type}"> -->
       <xsl:element name="span">
 	<xsl:attribute name="class">
 	  <xsl:value-of select="@ne-type"/>
