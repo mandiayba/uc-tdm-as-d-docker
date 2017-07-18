@@ -20,6 +20,26 @@
 <!-- Extract relevant entities -->
 <import file="plans/extract_Wheat_entities.plan"/>
 
+<!-- Add list of entities (canonical forms, synonyms...) to each document -->
+<module id="add-list-of-entities-to-doc" class="Action">
+  <target>documents</target>
+  <action>set:feat:entities(str:seds(str:seds(str:seds(
+  str:join:' , '(sort:nsval(document.sections.layer:genes[@canonical-form != @form],@canonical-form),@canonical-form) ^ " , " ^ 
+  str:join:' , '(sort:nsval(document.sections.layer:markers[@canonical-form != @form],@canonical-form),@canonical-form) ^ " , " ^ 
+  str:join:' , '(sort:nsval(document.sections.layer:markers[@synonym != @form],@synonym),@synonym) ^ " , " ^ 
+  str:join:' , '(sort:nsval(document.sections.layer:taxa[@canonical-name != @form],@canonical-name),@canonical-name) ^ " , " ^ 
+  str:join:' , '(sort:nsval(document.sections.layer:taxa[@synonym],@synonym),@synonym) ^ " , " ^
+  str:join:' , '(sort:nsval(document.sections.layer:accessions[@accession-name != @form],@accession-name),@accession-name) ^ " , " ^
+  str:join:' , '(sort:nsval(document.sections.layer:accessions[@synonym1],@synonym1),@synonym1) ^ " , " ^ 
+  str:join:' , '(sort:nsval(document.sections.layer:accessions[@synonym2],@synonym2),@synonym2),
+  "(\\s+,)+"," ,"),
+  "^(\\s*, )+",""),
+  " ,\\s*$","")
+  )
+  </action>
+  <setFeatures/>
+</module>
+
 <!-- Print results -->
 <write class="XMLWriter2">
   <outDir>&outdir;</outDir>
