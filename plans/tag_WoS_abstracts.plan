@@ -49,4 +49,61 @@
   <indent>false</indent>
 </write>
 
+<!-- Index for AlvisIR -->
+  <module id="index" class="AlvisIRIndexer">
+    <indexDir>&outdir;/index</indexDir>
+    <tokenPositionGap>128</tokenPositionGap>
+    <fieldNames>title,abstract,author,full-author,pmid,year,journal,mesh</fieldNames>
+    <propertyKeys/>
+    <documents>
+      <fields>
+  	<instances>sections[@sectionname=="title"] | sections[@sectionname=="abstract"]</instances>
+  	<field-name>@sectionname</field-name>
+  	<annotations>
+  	  <instances>layer:taxa</instances>
+  	  <text>"{taxon}" ^ @taxid ^ "/"</text>
+  	</annotations>
+  	<annotations>
+  	  <instances>layer:genes</instances>
+  	  <text>"{gene}" ^ @canonical-form ^ "/"</text>
+  	</annotations>
+  	<annotations>
+  	  <instances>layer:markers</instances>
+  	  <text>"{marker}" ^ @canonical-form ^ "/"</text>
+  	</annotations>
+  	<annotations>
+  	  <instances>layer:sentences</instances>
+  	  <text>"{SENT}"</text>
+  	</annotations>
+  	<annotations>
+  	  <instances>layer:phenotypes</instances>
+  	  <text>"{phenotype}" ^ @concept-path ^ "/"</text>
+  	</annotations>
+      </fields>
+      <fields>
+  	<instances>sections:author</instances>
+      </fields>
+      <fields>
+  	<instances>sections:author</instances>
+  	<field-name>"full-author"</field-name>
+  	<keyword>contents</keyword>
+      </fields>
+      <fields>
+  	<instances>$[@DI]</instances>
+  	<field-name>"pmid"</field-name>
+  	<keyword>@DI</keyword>
+      </fields>
+      <fields>
+  	<instances>$[@PY]</instances>
+  	<field-name>"year"</field-name>
+  	<keyword>@PY</keyword>
+      </fields>
+      <fields>
+  	<instances>$[@JI]</instances>
+  	<field-name>"journal"</field-name>
+  	<keyword>@JI</keyword>
+      </fields>
+    </documents>
+  </module>
+
 </alvisnlp-plan>
