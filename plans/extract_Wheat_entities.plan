@@ -18,7 +18,7 @@
     </module>
 
     <module id="stanford" class="StanfordNER">
-      <classifierFile>/opt/alvisnlp/psoft/stanford-ner/classifiers/english.all.3class.distsim.crf.ser.gz</classifierFile>
+      <classifierFile>/alvisnlp/psoft/stanford-ner/classifiers/english.all.3class.distsim.crf.ser.gz</classifierFile>
       <labelFeatureName>stanford-label</labelFeatureName>
       <targetLayerName>stanford</targetLayerName>
       <searchInContents/>
@@ -217,7 +217,7 @@
   </segmentation>
 
   <genia class="GeniaTagger">
-    <geniaDir>/opt/alvisnlp/psoft/geniatagger-3.0.2</geniaDir>
+    <geniaDir>/alvisnlp/psoft/geniatagger-3.0.2</geniaDir>
     <pos>pos</pos>
     <lemma>lemma</lemma>
     <chunk>chunk</chunk>
