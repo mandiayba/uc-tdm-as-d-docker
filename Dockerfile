@@ -1,5 +1,5 @@
 # Pull AlvisNLP image
-FROM bibliome/alvisengine
+FROM bibliome/alvisengine:1.0.0
 
 # Get StanfordNER 2014-06-16*
 WORKDIR /alvisnlp/psoft
