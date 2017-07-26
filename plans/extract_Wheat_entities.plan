@@ -18,7 +18,7 @@
     </module>
 
     <module id="stanford" class="StanfordNER">
-      <classifierFile>/alvisnlp/psoft/stanford-ner/classifiers/english.all.3class.distsim.crf.ser.gz</classifierFile>
+      <classifierFile>/alvisnlp/psoft/stanford-ner-2014-06-16/classifiers/english.all.3class.distsim.crf.ser.gz</classifierFile>
       <labelFeatureName>stanford-label</labelFeatureName>
       <targetLayerName>stanford</targetLayerName>
       <searchInContents/>
