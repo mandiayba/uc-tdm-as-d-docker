@@ -218,10 +218,10 @@
 
   <genia class="GeniaTagger">
     <geniaDir>/alvisnlp/psoft/geniatagger-3.0.2</geniaDir>
-    <pos>pos</pos>
-    <lemma>lemma</lemma>
-    <chunk>chunk</chunk>
-    <entity>entity</entity>
+    <posFeature>pos</posFeature>
+    <lemmaFeature>lemma</lemmaFeature>
+    <chunkFeature>chunk</chunkFeature>
+    <entityFeature>entity</entityFeature>
   </genia>
 
   <!-- Adapt Genia's POS tags to match Treetagger's -->

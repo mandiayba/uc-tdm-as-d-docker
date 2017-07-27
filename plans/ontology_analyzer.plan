@@ -44,10 +44,10 @@
 
   <genia class="GeniaTagger">
     <geniaDir>/alvisnlp/psoft/geniatagger-3.0.2</geniaDir>
-    <pos>pos</pos>
-    <lemma>lemma</lemma>
-    <chunk>chunk</chunk>
-    <entity>entity</entity>
+    <posFeature>pos</posFeature>
+    <lemmaFeature>lemma</lemmaFeature>
+    <chunkFeature>chunk</chunkFeature>
+    <entityFeature>entity</entityFeature>
   </genia>
 
   <!-- Adapt Genia's POS tags to match Treetagger's -->
@@ -166,7 +166,7 @@
     <configDir>/as-d/plans/config/</configDir>
     <localeDir>/usr/share/YaTeA/locale</localeDir>
     <yateaExecutable>/usr/local/bin/yatea</yateaExecutable>
-    <rcFile>plans/yatea.rc</rcFile>
+    <rcFile>/as-d/plans/yatea.rc</rcFile>
     <conceptIdentifier>document.@id</conceptIdentifier>
   </module>
 

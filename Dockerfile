@@ -1,5 +1,5 @@
 # Pull AlvisNLP image
-FROM bibliome/alvisengine
+FROM bibliome/alvisengine:1.0.1
 
 # Get StanfordNER 2014-06-16*
 # WORKDIR /alvisnlp/psoft
@@ -32,7 +32,7 @@ RUN wget https://github.com/openminted/uc-tdm-AS-D/archive/master.zip && \
     rm -r uc-tdm-AS-D-master 
 
 # Preprocess resources
-RUN alvisnlp -verbose -entity ontofile WheatPhenotypeOntology.obo -entity outfile WheatPhenotypeOntology.tomap plans/ontology_analyzer.plan
+#RUN alvisnlp -verbose -entity ontofile WheatPhenotypeOntology.obo -entity outfile WheatPhenotypeOntology.tomap plans/ontology_analyzer.plan
 
 
 
