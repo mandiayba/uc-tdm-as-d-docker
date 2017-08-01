@@ -1,16 +1,5 @@
 # Pull AlvisNLP image
-FROM bibliome/alvisengine:1.0.1
-
-# Get StanfordNER 2014-06-16*
-# WORKDIR /alvisnlp/psoft
-# RUN wget https://nlp.stanford.edu/software/stanford-ner-2014-06-16.zip && \
-#     unzip stanford-ner-2014-06-16 && \
-#     mv stanford-ner-2014-06-16 stanford-ner && \
-#     rm stanford-ner-2014-06-16.zip
-
-# Get Yatea
-# RUN cpan App::cpanminus
-# RUN cpanm Lingua::YaTeA
+FROM bibliome/alvisengine:2.0.0
 
 # Set the working directory to /as-d
 WORKDIR /as-d
@@ -28,11 +17,12 @@ RUN wget https://github.com/openminted/uc-tdm-AS-D/archive/master.zip && \
     unzip master.zip && \
     cp uc-tdm-AS-D-master/resources/* /as-d/resources && \
     cp uc-tdm-AS-D-master/yatea.dtd /as-d/ && \
+    cp uc-tdm-AS-D-master/plans/urgiExport.xslt /as-d/plans/ && \
     unzip /as-d/resources/taxa+id_full.zip -d /as-d/resources/ && \
     rm -r uc-tdm-AS-D-master 
 
 # Preprocess resources
-#RUN alvisnlp -verbose -entity ontofile WheatPhenotypeOntology.obo -entity outfile WheatPhenotypeOntology.tomap plans/ontology_analyzer.plan
+RUN alvisnlp -verbose -entity ontofile WheatPhenotypeOntology.obo -entity outfile WheatPhenotypeOntology.tomap plans/ontology_analyzer.plan
 
 
 
