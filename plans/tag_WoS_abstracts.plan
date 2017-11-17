@@ -24,14 +24,14 @@
 <module id="add-list-of-entities-to-doc" class="Action">
   <target>documents</target>
   <action>set:feat:entities(str:seds(str:seds(str:seds(
-  str:join:' , '(sort:nsval(document.sections.layer:genes[@canonical-form != @form],@canonical-form),@canonical-form) ^ " , " ^ 
-  str:join:' , '(sort:nsval(document.sections.layer:markers[@canonical-form != @form],@canonical-form),@canonical-form) ^ " , " ^ 
-  str:join:' , '(sort:nsval(document.sections.layer:markers[@synonym != @form],@synonym),@synonym) ^ " , " ^ 
-  str:join:' , '(sort:nsval(document.sections.layer:taxa[@canonical-name != @form],@canonical-name),@canonical-name) ^ " , " ^ 
-  str:join:' , '(sort:nsval(document.sections.layer:taxa[@synonym],@synonym),@synonym) ^ " , " ^
-  str:join:' , '(sort:nsval(document.sections.layer:accessions[@accession-name != @form],@accession-name),@accession-name) ^ " , " ^
-  str:join:' , '(sort:nsval(document.sections.layer:accessions[@synonym1],@synonym1),@synonym1) ^ " , " ^ 
-  str:join:' , '(sort:nsval(document.sections.layer:accessions[@synonym2],@synonym2),@synonym2),
+  str:join:' , '(sort:nsval(document.sections[@sectionname == "title" or @sectionname == "abstract"].layer:genes[@canonical-form != @form],@canonical-form),@canonical-form) ^ " , " ^ 
+  str:join:' , '(sort:nsval(document.sections[@sectionname == "title" or @sectionname == "abstract"].layer:markers[@canonical-form != @form],@canonical-form),@canonical-form) ^ " , " ^ 
+  str:join:' , '(sort:nsval(document.sections[@sectionname == "title" or @sectionname == "abstract"].layer:markers[@synonym != @form],@synonym),@synonym) ^ " , " ^ 
+  str:join:' , '(sort:nsval(document.sections[@sectionname == "title" or @sectionname == "abstract"].layer:taxa[@canonical-name != @form],@canonical-name),@canonical-name) ^ " , " ^ 
+  str:join:' , '(sort:nsval(document.sections[@sectionname == "title" or @sectionname == "abstract"].layer:taxa[@synonym],@synonym),@synonym) ^ " , " ^
+  str:join:' , '(sort:nsval(document.sections[@sectionname == "title" or @sectionname == "abstract"].layer:accessions[@accession-name != @form],@accession-name),@accession-name) ^ " , " ^
+  str:join:' , '(sort:nsval(document.sections[@sectionname == "title" or @sectionname == "abstract"].layer:accessions[@synonym1],@synonym1),@synonym1) ^ " , " ^ 
+  str:join:' , '(sort:nsval(document.sections[@sectionname == "title" or @sectionname == "abstract"].layer:accessions[@synonym2],@synonym2),@synonym2),
   "(\\s+,)+"," ,"),
   "^(\\s*, )+",""),
   " ,\\s*$","")
@@ -53,7 +53,7 @@
   <module id="index" class="AlvisIRIndexer">
     <indexDir>&outdir;/index</indexDir>
     <tokenPositionGap>128</tokenPositionGap>
-    <fieldNames>title,abstract,author,full-author,pmid,year,journal,mesh</fieldNames>
+    <fieldNames>title,abstract,author,full-author,doi,year,journal,mesh</fieldNames>
     <propertyKeys/>
     <documents>
       <fields>
@@ -71,6 +71,10 @@
   	  <instances>layer:markers</instances>
   	  <text>"{marker}" ^ @canonical-form ^ "/"</text>
   	</annotations>
+	<annotations>
+  	  <instances>layer:varieties</instances>
+  	  <text>"{variety}" ^ @form ^ "/"</text>
+  	</annotations>
   	<annotations>
   	  <instances>layer:sentences</instances>
   	  <text>"{SENT}"</text>
@@ -81,16 +85,13 @@
   	</annotations>
       </fields>
       <fields>
-  	<instances>sections:author</instances>
-      </fields>
-      <fields>
-  	<instances>sections:author</instances>
-  	<field-name>"full-author"</field-name>
-  	<keyword>contents</keyword>
+	<instances>document.nav:features:AU</instances>
+  	<field-name>"author"</field-name>
+  	<keyword>@value</keyword>
       </fields>
       <fields>
   	<instances>$[@DI]</instances>
-  	<field-name>"pmid"</field-name>
+  	<field-name>"doi"</field-name>
   	<keyword>@DI</keyword>
       </fields>
       <fields>
