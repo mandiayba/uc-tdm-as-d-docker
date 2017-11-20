@@ -49,18 +49,6 @@
   <indent>false</indent>
 </write>
 
-<module id="print-genes" class="TabularExport">
-  <outDir>&outdir;</outDir>
-  <files>$</files>
-  <fileName>"genes.txt"</fileName>
-  <lines>documents.sections[@sectionname == "title" or @sectionname == "abstract"].layer:genes</lines>
-  <columns separator=";">
-    <element>section.document.@id</element>
-    <element>str:seds(@form, "\\n", " ")</element>
-    <element>str:normalizeSpace(@context-both)</element>
-  </columns>
-</module>
-
 <!-- Index for AlvisIR -->
   <module id="index" class="AlvisIRIndexer">
     <indexDir>&outdir;/index</indexDir>
