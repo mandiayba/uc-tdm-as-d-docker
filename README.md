@@ -4,8 +4,8 @@ This component is the workflow for the OpenMinTeD AS-D use case.
 
 ## test-data
 The test-data folder contains data to run the workflow. More specifically:
-* corpus/ subfolder contains a text sample that can be used as input.
-* output/ is where the output data will be created
+* corpus/ contains a text sample that can be used as input.
+* output/ is where the output of the workflow will be created.
 
 ## Run in command-line
 
