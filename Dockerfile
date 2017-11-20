@@ -17,7 +17,6 @@ RUN wget https://github.com/openminted/uc-tdm-AS-D/archive/master.zip && \
     unzip master.zip && \
     cp uc-tdm-AS-D-master/resources/* /as-d/resources && \
     cp uc-tdm-AS-D-master/yatea.dtd /as-d/ && \
-    cp uc-tdm-AS-D-master/plans/urgiExport.xslt /as-d/plans/ && \
     unzip /as-d/resources/taxa+id_full.zip -d /as-d/resources/ && \
     rm -r uc-tdm-AS-D-master 
 
