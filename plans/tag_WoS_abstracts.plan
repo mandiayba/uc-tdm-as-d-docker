@@ -50,7 +50,7 @@
 </write>
 
 <module id="print-genes" class="TabularExport">
-  <outDir>&outdir;<</outDir>
+  <outDir>&outdir;</outDir>
   <files>$</files>
   <fileName>"genes.txt"</fileName>
   <lines>documents.sections[@sectionname == "title" or @sectionname == "abstract"].layer:genes</lines>
