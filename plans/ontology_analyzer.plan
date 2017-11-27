@@ -1,6 +1,14 @@
 <alvisnlp-plan id="tomap-train">
+  
+  <param name="input">
+  <alias module="read-obo" param="oboFiles"/>
+  </param>
+  <param name="output">
+  <alias module="analyze" param="outFile"/>
+  </param>
+  
   <module id="read-obo" class="OBOReader">
-    <oboFiles>resources/&ontofile;</oboFiles>
+    <oboFiles>resources/WheatPhenotypeOntology.obo</oboFiles>
   </module>
 
   <module id="words" class="WoSMig"/>
@@ -161,7 +169,7 @@
   </module>
 
   <module id="analyze" class="TomapTrain">
-    <outFile>resources/&outfile;</outFile>
+    <outFile>resources/WheatPhenotypeOntology.tomap</outFile>
     <workingDir>yatea-train</workingDir>
     <configDir>/as-d/plans/config/</configDir>
     <localeDir>/usr/share/YaTeA/locale</localeDir>
