@@ -1,5 +1,5 @@
 # Pull AlvisNLP image
-FROM bibliome/alvisengine:2.0.0
+FROM bibliome/alvisengine:2.0.2
 
 # Set the working directory to /as-d
 WORKDIR /as-d
@@ -21,7 +21,7 @@ RUN wget https://github.com/openminted/uc-tdm-AS-D/archive/master.zip && \
     rm -r uc-tdm-AS-D-master 
 
 # Preprocess resources
-RUN alvisnlp -verbose -entity ontofile WheatPhenotypeOntology.obo -entity outfile WheatPhenotypeOntology.tomap plans/ontology_analyzer.plan
+RUN alvisnlp -verbose -alias input resources/WheatPhenotypeOntology.obo -alias output resources/WheatPhenotypeOntology.tomap plans/ontology_analyzer.plan
 
 
 
