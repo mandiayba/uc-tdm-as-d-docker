@@ -2,20 +2,24 @@
 
 <alvisnlp-plan id="test-as-d">
 
-<!-- Read abstracts -->
-<module id="read-wos-abstracts" class="WebOfKnowledgeReader">
-    <source>&inputfile;</source>
-</module>
-<module id="renametitle" class="Action">
-  <target>documents.sections:TI</target>
-  <action>set:feat:sectionname("title")</action>
-  <setFeatures/>
-</module>
-<module id="renameabstract" class="Action">
-  <target>documents.sections:AB</target>
-  <action>set:feat:sectionname("abstract")</action>
-  <setFeatures/>
-</module>
+  <param name="input">
+    <alias module="read-wos-abstracts" param="source"/>
+  </param>
+  
+  <!-- Read abstracts -->
+  <module id="read-wos-abstracts" class="WebOfKnowledgeReader">
+    <source>test.txt</source>
+  </module>
+  <module id="renametitle" class="Action">
+    <target>documents.sections:TI</target>
+    <action>set:feat:sectionname("title")</action>
+    <setFeatures/>
+  </module>
+  <module id="renameabstract" class="Action">
+    <target>documents.sections:AB</target>
+    <action>set:feat:sectionname("abstract")</action>
+    <setFeatures/>
+  </module>
 
 <!-- Extract relevant entities -->
 <import file="plans/extract_Wheat_entities.plan"/>
