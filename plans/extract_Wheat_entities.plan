@@ -3,14 +3,14 @@
 <alvisnlp-plan id="test-as-d">
 
 <!-- Stopwords -->
-    <module id="stopword-list" class="SimpleProjector2">
+    <module id="stopword-list" class="TabularProjector">
       <dictFile>resources/stopwords_EN.txt</dictFile>
       <targetLayerName>stopwords</targetLayerName>
       <valueFeatures>string</valueFeatures>
       <caseInsensitive/>
     </module>
 
-    <module id="blacklist" class="SimpleProjector2">
+    <module id="blacklist" class="TabularProjector">
       <dictFile>resources/blacklist_accessions.txt</dictFile>
       <targetLayerName>blacklist</targetLayerName>
       <valueFeatures>string</valueFeatures>
@@ -27,7 +27,7 @@
 <!-- Tag Genes : Lexicon + Regexp -->
   <genes>
     <!-- TODO : use another list ?? -->
-    <module id="dictionary" class="SimpleProjector2">
+    <module id="dictionary" class="TabularProjector">
       <dictFile>resources/genes.txt</dictFile>
       <targetLayerName>genes</targetLayerName>
       <valueFeatures>,canonical-form</valueFeatures>
@@ -54,7 +54,7 @@
   <!-- Tag Marker Types : lexicon -->
   <sequence id="marker-types">
 
-    <module id="dictionary" class="SimpleProjector2">
+    <module id="dictionary" class="TabularProjector">
       <dictFile>resources/markertypes.txt</dictFile>
       <targetLayerName>marker-types</targetLayerName>
       <valueFeatures>,canonical-form</valueFeatures>
@@ -66,7 +66,7 @@
   <!-- Tag Markers : lexicon + regexp -->
   <markers>
 
-    <module id="dictionary" class="SimpleProjector2">
+    <module id="dictionary" class="TabularProjector">
       <!-- <dictFile>resources/Marker_Data_OpenMinTed.csv</dictFile> -->
       <dictFile>resources/marker_wheat_with_synonyms.csv</dictFile>
       <targetLayerName>markers</targetLayerName>
@@ -114,7 +114,7 @@
   </markers>
 
  <!-- Wheat accessions -->
-<module id="project-wheat-accessions" class="SimpleProjector2">
+<module id="project-wheat-accessions" class="TabularProjector">
   <dictFile>resources/wheat_accessions_and_synonyms_and_lot_and_synonyms.csv</dictFile>
   <targetLayerName>accessions</targetLayerName>
   <keyIndex>1</keyIndex>
@@ -135,7 +135,7 @@
 
 <!-- Wheat varieties -->
 <varieties>
-  <module id="project-wheat-variety-lexicon" class="SimpleProjector2">
+  <module id="project-wheat-variety-lexicon" class="TabularProjector">
     <dictFile>resources/triticum-aestivum-varieties.csv</dictFile>
     <targetLayerName>varieties</targetLayerName>
     <valueFeatures>string</valueFeatures>
@@ -157,7 +157,7 @@
 
 <organisms>
     <!-- URGI lexicon -->
-    <module id="dict" class="SimpleProjector2">
+    <module id="dict" class="TabularProjector">
       <targetLayerName>taxa</targetLayerName>
       <!-- <dictFile>resources/Taxon_Data_Wheat.txt</dictFile> -->
       <dictFile>resources/taxon_wheat_with_synonyms_tab.csv</dictFile>
@@ -172,7 +172,7 @@
     </module>
 
     <!-- NCBI lexicon -->
-    <module id="dict2" class="SimpleProjector2">
+    <module id="dict2" class="TabularProjector">
       <targetLayerName>NCBITaxa</targetLayerName>
       <dictFile>resources/taxa+id_full.txt</dictFile>
       <matchStartCaseInsensitive/>
@@ -190,7 +190,7 @@
       <removeFromLayer/>
     </module>
 
-    <mapping class="FileMapper2">
+    <mapping class="FileMapper">
       <target>documents.sections.layer:NCBITaxa</target>
       <form>@ncbi-canonical-name</form>
   <!--    <mappingFile>resources/Taxon_Data_Wheat.txt</mappingFile>-->
@@ -283,7 +283,7 @@
 
 
   <!-- Blacklist-accession -->
-   <module id="blacklist-projection" class="SimpleProjector2">
+   <module id="blacklist-projection" class="TabularProjector">
       <dictFile>resources/blacklist_accessions.txt</dictFile>
       <targetLayerName>blacklist</targetLayerName>
       <keyIndex>0</keyIndex>

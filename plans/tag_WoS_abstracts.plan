@@ -45,7 +45,7 @@
 </module>
 
 <!-- Print results -->
-<write class="XMLWriter2">
+<write class="XMLWriter">
   <outDir>&outdir;</outDir>
   <roots>$</roots>
   <fileName>"tagged_abstracts.csv"</fileName>
