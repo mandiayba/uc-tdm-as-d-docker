@@ -98,13 +98,14 @@
 </xsl:template>
 
   <xsl:template match="/">
-    <xsl:for-each select="a:elements('documents[@DI]')">
+    <xsl:for-each select="a:elements('documents[@url]')">
       <xsl:text>Bibliography,</xsl:text>
       <xsl:text>OpenMinTeD,</xsl:text>
       <xsl:value-of select="@DI"/>
       <xsl:text>,</xsl:text>
       <xsl:text>1,&quot;</xsl:text>
-      <xsl:for-each select="a:elements('sections:TI|sections:AB')">
+      <xsl:for-each select="a:elements('sections[@sectionname]')">
+     <!-- <xsl:for-each select="a:elements('sections:TI|sections:AB')">-->
 	<xsl:for-each select="a:inline('layer:genes|layer:markers|layer:taxa|layer:phenotypes|layer:accessions|layer:varieties')">
 	  <xsl:apply-templates select="child::node()"/>
 	</xsl:for-each>
@@ -112,8 +113,8 @@
       </xsl:for-each>
       <xsl:value-of select="@entities"/>
       <xsl:text>&quot;,</xsl:text>
-      <xsl:text>http://oadoi.org/</xsl:text>
-      <xsl:value-of select="@DI"/>
+      <!-- <xsl:text>http://oadoi.org/</xsl:text> -->
+      <xsl:value-of select="@url"/>
       <xsl:text>,</xsl:text>
       <xsl:text>Triticum,,,,,,,,,,,,,,,,,</xsl:text>
       <xsl:text>&#10;</xsl:text>

@@ -3,30 +3,45 @@
 <alvisnlp-plan id="test-as-d">
 
   <param name="input">
-    <alias module="read-wos-abstracts" param="source"/>
+    <alias module="read" param="sourcePath"/>
   </param>
   
   <!-- Read abstracts -->
-  <module id="read-wos-abstracts" class="WebOfKnowledgeReader">
-    <source>test.txt</source>
+  <module id="read" class="XMLReader">
+    <sourcePath>test.xml</sourcePath>
+    <xslTransform>plans/pubmed2alvisnlp.xslt</xslTransform>
   </module>
+
+  <!-- Get year -->
+  <module id="set-year" class="Action">
+    <target>documents[@year == "" and not @date == ""]</target>
+    <action>set:feat:year(str:seds(@date,"^(\\d+) .+$","$1"))</action>
+    <setFeatures/>
+  </module>
+
+   <module id="set-id" class="Action">
+    <target>documents</target>
+    <action>set:feat:DI(@id)</action>
+    <setFeatures/>
+  </module>
+  
   <module id="renametitle" class="Action">
-    <target>documents.sections:TI</target>
+    <target>documents.sections:title</target>
     <action>set:feat:sectionname("title")</action>
     <setFeatures/>
   </module>
   <module id="renameabstract" class="Action">
-    <target>documents.sections:AB</target>
+    <target>documents.sections:abstract</target>
     <action>set:feat:sectionname("abstract")</action>
     <setFeatures/>
   </module>
 
   <module id="set-url" class="Action">
-    <target>documents[@DI]</target>
-    <action>set:feat:url("http://oadoi.org/" ^ @DI)</action>
+    <target>documents</target>
+    <action>set:feat:url("http://www.ncbi.nlm.nih.gov/pubmed/" ^ @id)</action>
     <setFeatures/>
-  </module> 
-
+  </module>
+  
 <!-- Extract relevant entities -->
 <import file="plans/extract_Wheat_entities.plan"/>
 
@@ -95,24 +110,24 @@
   	</annotations>
       </fields>
       <fields>
-	<instances>document.nav:features:AU</instances>
+  	<instances>sections:author</instances>
   	<field-name>"author"</field-name>
-  	<keyword>@value</keyword>
+  	<keyword>contents</keyword>
       </fields>
       <fields>
-  	<instances>$[@DI]</instances>
+  	<instances>$</instances>
   	<field-name>"doi"</field-name>
-  	<keyword>@DI</keyword>
+  	<keyword>@id</keyword>
       </fields>
       <fields>
-  	<instances>$[@PY]</instances>
+  	<instances>$[@year]</instances>
   	<field-name>"year"</field-name>
-  	<keyword>@PY</keyword>
+  	<keyword>@year</keyword>
       </fields>
       <fields>
-  	<instances>$[@JI]</instances>
+  	<instances>$[@journal]</instances>
   	<field-name>"journal"</field-name>
-  	<keyword>@JI</keyword>
+  	<keyword>@journal</keyword>
       </fields>
     </documents>
   </module>
