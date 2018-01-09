@@ -1,0 +1,637 @@
+if: Genes
+pos: NP
+lf: Genes
+is a term candidate: 1
+
+-----------------
+
+if: powdery - mildew
+pos: NN - NN
+lf: powdery - mildew
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( powdery<=M> -<=P> mildew<=H> )
+islands: 0
+
+-----------------
+
+if: synthetic X
+pos: JJ NN
+lf: synthetic X
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( synthetic<=M> X<=H> )
+islands: 0
+
+-----------------
+
+if: molecular - marker linkage map of hexaploid wheat
+pos: JJ - NN NN NN of JJ NN
+lf: molecular - marker linkage map of hexaploid wheat
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: Puccinia recondita f
+pos: NP NP NN
+lf: Puccinia recondita f
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: Cloning
+pos: NN
+lf: cloning
+is a term candidate: 1
+
+-----------------
+
+if: teh classical genetic map
+pos: NN JJ JJ NN
+lf: teh classical genetic map
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: chromosomes
+pos: NNS
+lf: chromosome
+is a term candidate: 1
+
+-----------------
+
+if: framework
+pos: NN
+lf: framework
+is a term candidate: 1
+
+-----------------
+
+if: chromosome 4A
+pos: NN NN
+lf: chromosome 4A
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( chromosome<=M> 4A<=H> )
+islands: 0
+
+-----------------
+
+if: Plant
+pos: NN
+lf: Plant
+is a term candidate: 1
+
+-----------------
+
+if: tritici
+pos: NN
+lf: tritici
+is a term candidate: 1
+
+-----------------
+
+if: known ancestral reciprocal translocations
+pos: JJ JJ JJ NNS
+lf: known ancestral reciprocal translocation
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: kernel - hardness gene Ha
+pos: NN - NN NN NN
+lf: kernel - hardness gene Ha
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: maps
+pos: NNS
+lf: map
+is a term candidate: 1
+
+-----------------
+
+if: A-, B-,
+pos: JJ NN
+lf: A-, B-,
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( A-,<=M> B-,<=H> )
+islands: 0
+
+-----------------
+
+if: E Van Deynze
+pos: NP NP NP
+lf: E Van Deynze
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: aneuploid analysis
+pos: JJ NN
+lf: aneuploid analysis
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( aneuploid<=M> analysis<=H> )
+islands: 0
+
+-----------------
+
+if: J C Nelson
+pos: NP NP NP
+lf: J C Nelson
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: Translocation
+pos: NN
+lf: Translocation
+is a term candidate: 1
+
+-----------------
+
+if: Gene Rearrangement
+pos: NN NN
+lf: Gene Rearrangement
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( Gene<=M> Rearrangement<=H> )
+islands: 0
+
+-----------------
+
+if: Pm1
+pos: NN
+lf: Pm1
+is a term candidate: 1
+
+-----------------
+
+if: resistance genes Pm2
+pos: NN NNS NN
+lf: resistance gene Pm2
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: Chromosome Mapping
+pos: NN NN
+lf: Chromosome mapping
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( Chromosome<=M> Mapping<=H> )
+islands: 0
+
+-----------------
+
+if: RFLP markers
+pos: NN NNS
+lf: RFLP marker
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( RFLP<=M> markers<=H> )
+islands: 0
+
+-----------------
+
+if: J A Anderson
+pos: NP NP NP
+lf: J A Anderson
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: clones
+pos: NNS
+lf: clone
+is a term candidate: 1
+
+-----------------
+
+if: restriction fragment length polymorphism
+pos: NN NN NN NN
+lf: restriction fragment length polymorphism
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: RFLP
+pos: NN
+lf: RFLP
+is a term candidate: 1
+
+-----------------
+
+if: resistance gene Lr34
+pos: NN NN NN
+lf: resistance gene Lr34
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: Plant
+pos: NP
+lf: Plant
+is a term candidate: 1
+
+-----------------
+
+if: M Bernard
+pos: NP NP
+lf: M Bernard
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( M<=M> Bernard<=H> )
+islands: 0
+
+-----------------
+
+if: Triticum
+pos: NN
+lf: Triticum
+is a term candidate: 1
+
+-----------------
+
+if: rearrangements
+pos: NNS
+lf: rearrangement
+is a term candidate: 1
+
+-----------------
+
+if: Gene Library
+pos: NP NP
+lf: Gene Library
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( Gene<=M> Library<=H> )
+islands: 0
+
+-----------------
+
+if: M E Sorrells
+pos: NN NN NNS
+lf: M E Sorrell
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: Known genes
+pos: NN NNS
+lf: Known gene
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( Known<=M> genes<=H> )
+islands: 0
+
+-----------------
+
+if: record
+pos: NN
+lf: record
+is a term candidate: 1
+
+-----------------
+
+if: known pericentric inversion
+pos: JJ JJ NN
+lf: known pericentric inversion
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( known<=M> ( pericentric<=M> inversion<=H> )<=H> )
+islands: 0
+
+-----------------
+
+if: Genetic Linkage
+pos: JJ NN
+lf: Genetic Linkage
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( Genetic<=M> Linkage<=H> )
+islands: 0
+
+-----------------
+
+if: integration
+pos: NN
+lf: integration
+is a term candidate: 1
+
+-----------------
+
+if: 7AL
+pos: NN
+lf: 7AL
+is a term candidate: 1
+
+-----------------
+
+if: P Leroy
+pos: NP NP
+lf: P Leroy
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( P<=M> Leroy<=H> )
+islands: 0
+
+-----------------
+
+if: linkage
+pos: NN
+lf: linkage
+is a term candidate: 1
+
+-----------------
+
+if: DNA libraries
+pos: NN NNS
+lf: DNA library
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( DNA<=M> libraries<=H> )
+islands: 0
+
+-----------------
+
+if: chromosomal rearrangements
+pos: JJ NNS
+lf: chromosomal rearrangement
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( chromosomal<=M> rearrangements<=H> )
+islands: 0
+
+-----------------
+
+if: Molecular
+pos: NP
+lf: Molecular
+is a term candidate: 1
+
+-----------------
+
+if: M Atkinson
+pos: NP NP
+lf: M Atkinson
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( M<=M> Atkinson<=H> )
+islands: 0
+
+-----------------
+
+if: wheat
+pos: NN
+lf: wheat
+is a term candidate: 1
+
+-----------------
+
+if: Blumeria graminis f
+pos: NN NN NN
+lf: Blumeria graminis f
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: Triticum aestivum L
+pos: NP NP NP
+lf: Triticum aestivum L
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: red-coleoptile gene Rc1
+pos: JJ NN NN
+lf: red-coleoptile gene Rc1
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: Chromosomal breakpoints
+pos: JJ NNS
+lf: Chromosomal breakpoint
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( Chromosomal<=M> breakpoints<=H> )
+islands: 0
+
+-----------------
+
+if: Y H Lu
+pos: NN NN NN
+lf: Y H Lu
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: homoeologous groups
+pos: JJ NNS
+lf: homoeologous group
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( homoeologous<=M> groups<=H> )
+islands: 0
+
+-----------------
+
+if: 7DS
+pos: NN
+lf: 7DS
+is a term candidate: 1
+
+-----------------
+
+if: Genetic Markers
+pos: JJ NNS
+lf: Genetic Marker
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( Genetic<=M> Markers<=H> )
+islands: 0
+
+-----------------
+
+if: sp
+pos: NN
+lf: sp
+is a term candidate: 1
+
+-----------------
+
+if: 7AS
+pos: NN
+lf: 7AS
+is a term candidate: 1
+
+-----------------
+
+if: 5DL
+pos: NN
+lf: 5DL
+is a term candidate: 1
+
+-----------------
+
+if: chromosome arms 5AL
+pos: NN NNS NN
+lf: chromosome arm 5AL
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: leaf - rust
+pos: NN - NN
+lf: leaf - rust
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( leaf<=M> -<=P> rust<=H> )
+islands: 0
+
+-----------------
+
+if: Restriction Fragment Length
+pos: NP NP NP
+lf: Restriction Fragment Length
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: J D Faris
+pos: NP NP NP
+lf: J D Faris
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: D-genome chromosomes of homoeologous groups
+pos: NN NNS of JJ NNS
+lf: D-genome chromosome of homoeologous group
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: F7 lines
+pos: NN NNS
+lf: F7 line
+is a term candidate: 1
+parsing method: PATTERN_MATCHING
+forest:  number of trees: 1
+	T1: ( F7<=M> lines<=H> )
+islands: 0
+
+-----------------
+
+if: 5DS
+pos: NN
+lf: 5DS
+is a term candidate: 1
+
+-----------------
+
+if: evolution of this crop species
+pos: NN of DT NN NN
+lf: evolution of this crop species
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: vernalization genes Vrn1
+pos: NN NNS NN
+lf: vernalization gene Vrn1
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: Molecular mapping of wheat : major genes
+pos: JJ NN of NN COLUMN JJ NNS
+lf: Molecular mapping of wheat : major gene
+is a term candidate: 0
+islands: 0
+
+-----------------
+
+if: Polymorphism
+pos: NP
+lf: Polymorphism
+is a term candidate: 1
+
+-----------------
+
+if: Crosses
+pos: NNS
+lf: Crosse
+is a term candidate: 1
+
+-----------------
+
+if: DNA
+pos: NN
+lf: DNA
+is a term candidate: 1
+
+-----------------
+
+if: Vrn3
+pos: NN
+lf: Vrn3
+is a term candidate: 1
+
+-----------------
+
+if: chromosome arms 5DS
+pos: NN NNS NN
+lf: chromosome arm 5DS
+is a term candidate: 0
+islands: 0
+
+-----------------
+

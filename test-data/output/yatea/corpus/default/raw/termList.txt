@@ -1,0 +1,77 @@
+# Inflected form	Frequency	DDW
+Genetic Markers	2	1.88705705627657
+homoeologous groups	2	1.88705705627657
+E Van Deynze	1	1.20246534644247
+gene Rc1	1	1.20246534644247
+M Bernard	1	1.20246534644247
+Chromosome Mapping	1	1.20246534644247
+RFLP markers	1	1.20246534644247
+Gene Library	1	1.20246534644247
+Restriction Fragment Length	1	1.20246534644247
+crop species	1	1.20246534644247
+DNA libraries	1	1.20246534644247
+classical genetic map	1	1.20246534644247
+linkage map of hexaploid wheat	1	1.20246534644247
+kernel - hardness	1	1.20246534644247
+Triticum aestivum L	1	1.20246534644247
+Blumeria graminis f	1	1.20246534644247
+map of hexaploid wheat	1	1.20246534644247
+M Atkinson	1	1.20246534644247
+chromosomes of homoeologous groups	1	1.20246534644247
+Van Deynze	1	1.20246534644247
+genes Vrn1	1	1.20246534644247
+powdery - mildew	1	1.20246534644247
+aneuploid analysis	1	1.20246534644247
+recondita f	1	1.20246534644247
+M E Sorrells	1	1.20246534644247
+J A Anderson	1	1.20246534644247
+genes Pm2	1	1.20246534644247
+D Faris	1	1.20246534644247
+known pericentric inversion	1	1.20246534644247
+Chromosomal breakpoints	1	1.20246534644247
+chromosome arms 5AL	1	1.20246534644247
+Genetic Linkage	1	1.20246534644247
+known ancestral reciprocal translocations	1	1.20246534644247
+teh classical genetic map	1	1.20246534644247
+Puccinia recondita f	1	1.20246534644247
+Fragment Length	1	1.20246534644247
+gene Ha	1	1.20246534644247
+molecular - marker linkage map of hexaploid wheat	1	1.20246534644247
+H Lu	1	1.20246534644247
+pericentric inversion	1	1.20246534644247
+chromosomal rearrangements	1	1.20246534644247
+P Leroy	1	1.20246534644247
+chromosome 4A	1	1.20246534644247
+length polymorphism	1	1.20246534644247
+C Nelson	1	1.20246534644247
+aestivum L	1	1.20246534644247
+fragment length polymorphism	1	1.20246534644247
+hexaploid wheat	1	1.20246534644247
+synthetic X	1	1.20246534644247
+molecular - marker	1	1.20246534644247
+graminis f	1	1.20246534644247
+gene Lr34	1	1.20246534644247
+Known genes	1	1.20246534644247
+A Anderson	1	1.20246534644247
+Gene Rearrangement	1	1.20246534644247
+red-coleoptile gene Rc1	1	1.20246534644247
+ancestral reciprocal translocations	1	1.20246534644247
+leaf - rust	1	1.20246534644247
+A-, B-,	1	1.20246534644247
+J D Faris	1	1.20246534644247
+Y H Lu	1	1.20246534644247
+chromosome arms 5DS	1	1.20246534644247
+genetic map	1	1.20246534644247
+restriction fragment length polymorphism	1	1.20246534644247
+resistance gene Lr34	1	1.20246534644247
+evolution of this crop species	1	1.20246534644247
+D-genome chromosomes of homoeologous groups	1	1.20246534644247
+J C Nelson	1	1.20246534644247
+vernalization genes Vrn1	1	1.20246534644247
+reciprocal translocations	1	1.20246534644247
+resistance genes Pm2	1	1.20246534644247
+arms 5AL	1	1.20246534644247
+arms 5DS	1	1.20246534644247
+E Sorrells	1	1.20246534644247
+kernel - hardness gene Ha	1	1.20246534644247
+F7 lines	1	1.20246534644247
