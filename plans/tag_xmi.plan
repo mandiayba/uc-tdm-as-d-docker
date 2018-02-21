@@ -63,13 +63,13 @@
 </module>
 
 <!-- Print results -->
-<write class="XMLWriter">
+<writeXML class="XMLWriter">
   <outDir>&outdir;</outDir>
   <roots>$</roots>
   <fileName>"tagged_abstracts.csv"</fileName>
   <xslTransform>plans/urgiExport.xslt</xslTransform>
   <indent>false</indent>
-</write>
+</writeXML>
 
 <!-- Index for AlvisIR -->
   <module id="index" class="AlvisIRIndexer">
