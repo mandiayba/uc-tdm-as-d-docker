@@ -232,7 +232,7 @@
     </module>
 
     <!-- Segmentation -->
-    <import href="res://fr.inra.maiage.bibliome.alvisnlp.bibliomefactory.resources/segmentation.plan"/>
+    <import href="res://segmentation.plan"/>
 
   </segmentation>
 
