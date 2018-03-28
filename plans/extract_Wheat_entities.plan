@@ -359,7 +359,7 @@
   </module>
   
   <module id="yatea" class="YateaExtractor">
-    <workingDir>&outdir;/yatea</workingDir>
+    <workingDir>yatea</workingDir>
     <configDir>/as-d/plans/config/</configDir>
     <localeDir>/usr/share/YaTeA/locale</localeDir>
     <yateaExecutable>/usr/local/bin/yatea</yateaExecutable>

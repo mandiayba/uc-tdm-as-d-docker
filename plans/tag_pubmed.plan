@@ -67,7 +67,7 @@
 
 <!-- Print results -->
 <write class="XMLWriter">
-  <outDir>&outdir;</outDir>
+  <outDir>.</outDir>
   <roots>$</roots>
   <fileName>"tagged_abstracts.csv"</fileName>
   <xslTransform>plans/urgiExport.xslt</xslTransform>
@@ -76,7 +76,7 @@
 
 <!-- Index for AlvisIR -->
   <module id="index" class="AlvisIRIndexer">
-    <indexDir>&outdir;/index</indexDir>
+    <indexDir>index</indexDir>
     <tokenPositionGap>128</tokenPositionGap>
     <fieldNames>title,abstract,author,full-author,doi,year,journal,mesh</fieldNames>
     <propertyKeys/>
