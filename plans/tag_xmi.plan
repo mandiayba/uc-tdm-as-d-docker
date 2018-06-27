@@ -7,7 +7,11 @@
   </param>
   
   <!-- Read xmi -->
-  <read class="XMIImport"/>
+  <read class="XMIImport">
+    <source>.</source>
+    <ignoreMalformedXMI/>
+    <baseNameId/>
+  </read>
  
   <!-- Get year -->
   <module id="set-year" class="Action">
@@ -40,7 +44,7 @@
   </module>
   
 <!-- Extract relevant entities -->
-<import file="plans/extract_Wheat_entities.plan"/>
+<import file="/as-d/plans/extract_Wheat_entities.plan"/>
 
 <!-- Add list of entities (canonical forms, synonyms...) to each document -->
 <module id="add-list-of-entities-to-doc" class="Action">
@@ -67,7 +71,7 @@
   <outDir>.</outDir>
   <roots>$</roots>
   <fileName>"tagged_abstracts.csv"</fileName>
-  <xslTransform>plans/urgiExport.xslt</xslTransform>
+  <xslTransform>/as-d/plans/urgiExport.xslt</xslTransform>
   <indent>false</indent>
 </writeXML>
 
@@ -132,6 +136,7 @@
   <!-- XMI export -->
   <write class="XMIExport">
     <outDir>.</outDir>
+    <typeSystemFile>typesystem.xml</typeSystemFile>
   </write>
 
 
