@@ -4,14 +4,14 @@
 
 <!-- Stopwords -->
     <module id="stopword-list" class="TabularProjector">
-      <dictFile>resources/stopwords_EN.txt</dictFile>
+      <dictFile>/as-d/resources/stopwords_EN.txt</dictFile>
       <targetLayerName>stopwords</targetLayerName>
       <valueFeatures>string</valueFeatures>
       <caseInsensitive/>
     </module>
 
     <module id="blacklist" class="TabularProjector">
-      <dictFile>resources/blacklist_accessions.txt</dictFile>
+      <dictFile>/as-d/resources/blacklist_accessions.txt</dictFile>
       <targetLayerName>blacklist</targetLayerName>
       <valueFeatures>string</valueFeatures>
       <caseInsensitive/>
@@ -28,7 +28,7 @@
   <genes>
     <!-- TODO : use another list ?? -->
     <module id="dictionary" class="TabularProjector">
-      <dictFile>resources/genes.txt</dictFile>
+      <dictFile>/as-d/resources/genes.txt</dictFile>
       <targetLayerName>genes</targetLayerName>
       <valueFeatures>,canonical-form</valueFeatures>
       <constantAnnotationFeatures>type=ne,ne-type=gene</constantAnnotationFeatures>
@@ -55,7 +55,7 @@
   <sequence id="marker-types">
 
     <module id="dictionary" class="TabularProjector">
-      <dictFile>resources/markertypes.txt</dictFile>
+      <dictFile>/as-d/resources/markertypes.txt</dictFile>
       <targetLayerName>marker-types</targetLayerName>
       <valueFeatures>,canonical-form</valueFeatures>
       <constantAnnotationFeatures>type=ne,ne-type=marker-type</constantAnnotationFeatures>
@@ -67,8 +67,8 @@
   <markers>
 
     <module id="dictionary" class="TabularProjector">
-      <!-- <dictFile>resources/Marker_Data_OpenMinTed.csv</dictFile> -->
-      <dictFile>resources/marker_wheat_with_synonyms.csv</dictFile>
+      <!-- <dictFile>/as-d/resources/Marker_Data_OpenMinTed.csv</dictFile> -->
+      <dictFile>/as-d/resources/marker_wheat_with_synonyms.csv</dictFile>
       <targetLayerName>markers</targetLayerName>
       <keyIndex>1,2</keyIndex>
       <valueFeatures>id,canonical-form,synonym</valueFeatures>
@@ -115,7 +115,7 @@
 
  <!-- Wheat accessions -->
 <module id="project-wheat-accessions" class="TabularProjector">
-  <dictFile>resources/wheat_accessions_and_synonyms_and_lot_and_synonyms.csv</dictFile>
+  <dictFile>/as-d/resources/wheat_accessions_and_synonyms_and_lot_and_synonyms.csv</dictFile>
   <targetLayerName>accessions</targetLayerName>
   <keyIndex>1</keyIndex>
   <caseInsensitive/>
@@ -136,7 +136,7 @@
 <!-- Wheat varieties -->
 <varieties>
   <module id="project-wheat-variety-lexicon" class="TabularProjector">
-    <dictFile>resources/triticum-aestivum-varieties.csv</dictFile>
+    <dictFile>/as-d/resources/triticum-aestivum-varieties.csv</dictFile>
     <targetLayerName>varieties</targetLayerName>
     <valueFeatures>string</valueFeatures>
     <constantAnnotationFeatures>type=ne,ne-type=variety</constantAnnotationFeatures>
@@ -159,8 +159,8 @@
     <!-- URGI lexicon -->
     <module id="dict" class="TabularProjector">
       <targetLayerName>taxa</targetLayerName>
-      <!-- <dictFile>resources/Taxon_Data_Wheat.txt</dictFile> -->
-      <dictFile>resources/taxon_wheat_with_synonyms_tab.csv</dictFile>
+      <!-- <dictFile>/as-d/resources/Taxon_Data_Wheat.txt</dictFile> -->
+      <dictFile>/as-d/resources/taxon_wheat_with_synonyms_tab.csv</dictFile>
       <matchStartCaseInsensitive/>
       <keyIndex>1,2</keyIndex>
       <valueFeatures>taxid,canonical-name,syno,synonyms</valueFeatures>
@@ -174,7 +174,7 @@
     <!-- NCBI lexicon -->
     <module id="dict2" class="TabularProjector">
       <targetLayerName>NCBITaxa</targetLayerName>
-      <dictFile>resources/taxa+id_full.txt</dictFile>
+      <dictFile>/as-d/resources/taxa+id_full.txt</dictFile>
       <matchStartCaseInsensitive/>
       <valueFeatures>,ncbi-taxid,ncbi-canonical-name,ncbi-path,ncbi-pos,ncbi-rank</valueFeatures>
       <constantAnnotationFeatures>source=NCBI</constantAnnotationFeatures>
@@ -193,8 +193,8 @@
     <mapping class="FileMapper">
       <target>documents.sections.layer:NCBITaxa</target>
       <form>@ncbi-canonical-name</form>
-  <!--    <mappingFile>resources/Taxon_Data_Wheat.txt</mappingFile>-->
-      <mappingFile>resources/taxon_wheat_with_synonyms_tab.csv</mappingFile>
+  <!--    <mappingFile>/as-d/resources/Taxon_Data_Wheat.txt</mappingFile>-->
+      <mappingFile>/as-d/resources/taxon_wheat_with_synonyms_tab.csv</mappingFile>
       <targetFeatures>taxid,canonical-name,syno,synonyms</targetFeatures>
       <keyColumn>1</keyColumn>
     </mapping>
@@ -284,7 +284,7 @@
 
   <!-- Blacklist-accession -->
    <module id="blacklist-projection" class="TabularProjector">
-      <dictFile>resources/blacklist_accessions.txt</dictFile>
+      <dictFile>/as-d/resources/blacklist_accessions.txt</dictFile>
       <targetLayerName>blacklist</targetLayerName>
       <keyIndex>0</keyIndex>
       <valueFeatures>string</valueFeatures>
@@ -344,7 +344,7 @@
 <!-- Phenotypes -->
 
     <!-- Modify some pos tags and lemma in order to maximize term extraction with YaTEA -->
-    <import file="plans/pos-tag-lemma-postprocessing.plan"/>
+    <import file="/as-d/plans/pos-tag-lemma-postprocessing.plan"/>
 
   <!-- Remove final 's' and lower case words to take care of potential lemmatization errors -->
   <module id="remove-plural" class="Action">
@@ -363,11 +363,11 @@
     <configDir>/as-d/plans/config/</configDir>
     <localeDir>/usr/share/YaTeA/locale</localeDir>
     <yateaExecutable>/usr/local/bin/yatea</yateaExecutable>
-    <rcFile>plans/yatea.rc</rcFile>
+    <rcFile>/as-d/plans/yatea.rc</rcFile>
   </module>
 
      <!-- Run ToMap -->
-    <import file="plans/tomap-wheat-phenotypes-OMTD.plan"/>
+    <import file="/as-d/plans/tomap-wheat-phenotypes-OMTD.plan"/>
 
     <module id="add-type-feature" class="Action">
     <target>documents.sections.layer:phenotypes</target>
