@@ -8,14 +8,14 @@
     <targetLayerName>phenotypes</targetLayerName>
     <conceptFeature>concept-id</conceptFeature>
     <explanationFeaturePrefix>explain_</explanationFeaturePrefix>
-    <tomapClassifier graylist="resources/graylist_wheat.txt" whole-proxy-distance="false" empty-words="resources/stopwords_EN.ttg">resources/WheatPhenotypeOntology.tomap</tomapClassifier>
+    <tomapClassifier graylist="/as-d/resources/graylist_wheat.txt" whole-proxy-distance="false" empty-words="/as-d/resources/stopwords_EN.ttg">/as-d/resources/WheatPhenotypeOntology.tomap</tomapClassifier>
     <lemmaKeys/>
     <subject layer="words" feature="lemma"/>
     <scoreFeature>score</scoreFeature>
   </module>
 
   <module id="concept-names" class="OBOMapper">
-    <oboFiles>resources/WheatPhenotypeOntology.obo</oboFiles>
+    <oboFiles>/as-d/resources/WheatPhenotypeOntology.obo</oboFiles>
     <idKeys/>
     <target>documents.sections.layer:phenotypes</target>
     <form>@concept-id</form>
@@ -263,9 +263,9 @@
  <module id="flag-blacklisted-terms" class="PatternMatcher">
       <layerName>words</layerName>
       <pattern>
- 	(to-delete: [@lemma in "resources/modifier_blacklist.txt" or @form in "resources/modifier_blacklist.txt" or @ne-type=="gene" or @ne-type == "taxon"]*
- 	[@lemma in "resources/blacklist_phenotypes.txt" or @form in "resources/blacklist_phenotypes.txt"]
- 	[@lemma in "resources/modifier_blacklist.txt" or @form in "resources/modifier_blacklist.txt"]*)
+ 	(to-delete: [@lemma in "/as-d/resources/modifier_blacklist.txt" or @form in "/as-d/resources/modifier_blacklist.txt" or @ne-type=="gene" or @ne-type == "taxon"]*
+ 	[@lemma in "/as-d/resources/blacklist_phenotypes.txt" or @form in "/as-d/resources/blacklist_phenotypes.txt"]
+ 	[@lemma in "/as-d/resources/modifier_blacklist.txt" or @form in "/as-d/resources/modifier_blacklist.txt"]*)
       </pattern>
       <actions>
  	<createAnnotation group="to-delete" layer="to-delete"/>
@@ -302,7 +302,7 @@
 
 <!-- exact match -->
     <module id="exact-match" class="OBOProjector">
-      <oboFiles>resources/WheatPhenotypeOntology.obo</oboFiles>
+      <oboFiles>/as-d/resources/WheatPhenotypeOntology.obo</oboFiles>
       <targetLayerName>exact-pheno</targetLayerName>
       <nameFeature>concept-name</nameFeature>
       <pathFeature>concept-path</pathFeature>
