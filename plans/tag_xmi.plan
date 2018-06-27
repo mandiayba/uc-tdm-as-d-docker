@@ -21,9 +21,26 @@
   </module>
 
    <module id="set-id" class="Action">
-    <target>documents</target>
+    <target>documents[not @DI]</target>
     <action>set:feat:DI(@id)</action>
     <setFeatures/>
+  </module>
+
+  <!-- Remove duplicates -->
+  <module id="temp-id" class="Action">
+    <target>$</target>
+    <action>id:enumerate:tempid(documents)</action>
+    <setFeatures/>
+  </module>
+  <module id="tag-uniques" class="Action">
+    <target>documents</target>
+    <action>set:feat:uniq(not corpus.documents[@DI == target.@DI and target.@tempid > @tempid])</action>
+    <setFeatures/>
+  </module>
+  <module id="remove-duplicates" class="Action">
+    <target>documents[@uniq == "false"]</target>
+    <action>delete</action>
+    <deleteElements/>
   </module>
   
   <module id="renametitle" class="Action">
@@ -42,29 +59,39 @@
     <action>set:feat:url("http://www.ncbi.nlm.nih.gov/pubmed/" ^ @id)</action>
     <setFeatures/>
   </module>
+
+  <module id="get-first-author" class="Action">
+    <target>documents[@AU]</target>
+    <action>set:feat:first-author(nav:features:AU{0}.@value ^ (if nav:features:AU{1}.@value then " et al." else ""))</action>
+    <setFeatures/>
+  </module>
+
+  <module id="get-first-author-2" class="Action">
+    <target>documents[not @first-author]</target>
+    <action>set:feat:first-author(sections:author{0}.contents ^ (if sections:author{1}.contents then " et al." else ""))</action>
+    <setFeatures/>
+  </module>
+
+  <module id="set-title-feature" class="Action">
+    <target>documents</target>
+    <action>set:feat:title(str:seds(str:seds(str:normalizeSpace(sections[@sectionname == "title"].contents),"\"","%22"),"\\.$",""))</action>
+    <setFeatures/>
+  </module>
+
+  <module id="rename-year" class="Action">
+    <target>documents[@year]</target>
+    <action>set:feat:PY(@year)</action>
+    <setFeatures/>
+  </module>
+
+  <module id="rename-journal" class="Action">
+    <target>documents[@journal]</target>
+    <action>set:feat:JI(@journal)</action>
+    <setFeatures/>
+  </module>
   
 <!-- Extract relevant entities -->
 <import file="/as-d/plans/extract_Wheat_entities.plan"/>
-
-<!-- Add list of entities (canonical forms, synonyms...) to each document -->
-<module id="add-list-of-entities-to-doc" class="Action">
-  <target>documents</target>
-  <action>set:feat:entities(str:seds(str:seds(str:seds(
-  str:join:' , '(sort:nsval(document.sections.layer:genes[@canonical-form != @form],@canonical-form),@canonical-form) ^ " , " ^ 
-  str:join:' , '(sort:nsval(document.sections.layer:markers[@canonical-form != @form],@canonical-form),@canonical-form) ^ " , " ^ 
-  str:join:' , '(sort:nsval(document.sections.layer:markers[@synonym != @form],@synonym),@synonym) ^ " , " ^ 
-  str:join:' , '(sort:nsval(document.sections.layer:taxa[@canonical-name != @form],@canonical-name),@canonical-name) ^ " , " ^ 
-  str:join:' , '(sort:nsval(document.sections.layer:taxa[@synonym],@synonym),@synonym) ^ " , " ^
-  str:join:' , '(sort:nsval(document.sections.layer:accessions[@accession-name != @form],@accession-name),@accession-name) ^ " , " ^
-  str:join:' , '(sort:nsval(document.sections.layer:accessions[@synonym1],@synonym1),@synonym1) ^ " , " ^ 
-  str:join:' , '(sort:nsval(document.sections.layer:accessions[@synonym2],@synonym2),@synonym2),
-  "(\\s+,)+"," ,"),
-  "^(\\s*, )+",""),
-  " ,\\s*$","")
-  )
-  </action>
-  <setFeatures/>
-</module>
 
 <!-- Print results -->
 <writeXML class="XMLWriter">
@@ -74,6 +101,26 @@
   <xslTransform>/as-d/plans/urgiExport.xslt</xslTransform>
   <indent>false</indent>
 </writeXML>
+
+<!--Version 2 (no xml tags)-->
+<module id="print" class="TabularExport">
+  <outDir>.</outDir>
+  <files>$</files>
+  <fileName>"tagged_abstracts.csv"</fileName>
+  <lines>documents[@DI]</lines>
+  <separator>,</separator>
+  <columns separator=";">
+    "Bibliography";
+    "OpenMinTeD";
+    @DI;
+    "1";
+    "\"" ^ @first-author ^ " (" ^ @PY ^ "). " ^ @title ^ ". " ^ @JI ^ "                                                  " ^ 
+    str:seds(str:normalizeSpace(str:join:' '(document.(sections:TI|sections:AB),contents)),"\"","%22") ^ 
+    " " ^ @entities ^ " " ^ @paths ^ "\"";
+    "http://oadoi.org/" ^ @DI;
+    "Triticum" ^ ",,,,,,,,,,,,,,,,,"
+  </columns>
+</module>
 
 <!-- Index for AlvisIR -->
   <!-- <module id="index" class="AlvisIRIndexer"> -->
